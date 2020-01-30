@@ -1,0 +1,28 @@
+{
+  "name": "@codeduck/components",
+  "description": "Quackers",
+  "version": "0.0.1",
+  "private": false,
+  "author": "thecodeduck",
+  "homepage": "https://github.com/thecodeduck/components",
+  "contributors": [
+    "codeduck <thecodeduck@gmail.com> (https://github.com/thecodeduck)"
+  ],
+  "bugs": {
+    "url": "https://github.com/thecodeduck/components/issues"
+  },
+  "scripts": {
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "keywords": [],
+  "repository": "https://github.com/thecodeduck/components",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ]
+}
