@@ -12,10 +12,18 @@
     "url": "https://github.com/thecodeduck/components/issues"
   },
   "scripts": {
+    "storybook": "start-storybook"
   },
   "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@storybook/react": "^5.3.12",
+    "babel-loader": "^8.0.6",
+    "eslint": "^6.8.0",
+    "react-dom": "^16.12.0"
   },
   "keywords": [],
   "repository": "https://github.com/thecodeduck/components",
