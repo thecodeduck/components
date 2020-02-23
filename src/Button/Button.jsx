@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import styles from './Button.module.scss';
+
 const Button = ({
     children,
     disabled,
@@ -9,7 +11,7 @@ const Button = ({
     ...rest
 }) => {
     return (
-        <button href={href} onClick={onClick} disabled={disabled}>
+        <button className={styles.base} href={href} onClick={onClick} disabled={disabled}>
             {children}
         </button>
     )

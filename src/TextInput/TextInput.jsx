@@ -8,7 +8,7 @@ const TextInput = ({
     autoFocus,
     disabled,
     error,
-    helperText,
+    helpText,
     icon,
     id,
     label,
@@ -25,11 +25,19 @@ const TextInput = ({
 }) => {
     return (
         <Error error={error}>
-        <Label label={label}>
-            <HelpText helpText={helperText}>
-                <input type='text' maxLength={maxLength} onChange={onChange} autoFocus={autoFocus} disabled={disabled} />
-            </HelpText>
-        </Label>
+            <Label label={label} disabled={disabled} required={required}>
+                <HelpText helpText={helpText}>
+                    <input
+                        type='text'
+                        autoFocus={autoFocus}
+                        aria-disabled={disabled}
+                        required={required}
+                        placeholder={placeholder}
+                        maxLength={maxLength}
+                        onChange={onChange}
+                        disabled={disabled} />
+                </HelpText>
+            </Label>
         </Error>
     )
 }
