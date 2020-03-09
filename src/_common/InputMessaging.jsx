@@ -1,16 +1,18 @@
 import React from 'react';
-import ConditionalWrapper from './ConditionalWrapper';
+import classNames from "classnames";
 
-const Error = ({ error, children }) => {
+import styles from './InputWrapper.module.scss';
+
+const InputMessaging = ({ alert, error, disabled, children }) => {
     return (
-        <section className="error-test">
-            <ConditionalWrapper
-                condition={error}
-                wrapper={children => <div>{children}{error}</div>}>
-                {children}
-            </ConditionalWrapper>
+        <section className={classNames({
+            [styles.error]: error,
+            [styles.disabled]: disabled
+        })}>
+            {children}
+            {alert}
         </section>
     );
 };
 
-export default Error;
+export default InputMessaging;

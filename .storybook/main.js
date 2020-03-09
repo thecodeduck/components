@@ -1,6 +1,7 @@
 const baseConfig = require('../.webpack/config');
 
 module.exports = {
+    addons: ['@storybook/addon-knobs/register'],
     stories: ['../src/**/*.stories.jsx'],
     webpackFinal: async (config, { configType }) => {
         // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'

@@ -5,6 +5,18 @@ const SRC_DIR = path.normalize(`${__dirname}/../src`);
 
 const BUILD_DIR = path.normalize(`${__dirname}/../dist`);
 
+const JsxLoader = {
+    loader: 'babel-loader',
+    options: {
+        presets: ['@babel/preset-env', '@babel/preset-react'],
+    },
+}
+const SvgLoader = {
+    loader: 'react-svg-loader',
+    options: {
+        jsx: true,
+    }
+}
 const StyleLoader = {
     loader: 'style-loader'
 };
@@ -41,30 +53,20 @@ const config = {
     },
     resolve: {
       modules: [SRC_DIR, 'node_modules'],
-      extensions: ['.js', '.jsx', '.css', '.scss'],
+      extensions: ['.js', '.jsx', '.css', '.scss', '.svg'],
     },
     plugins: [],
     module: {
         rules: [
             {
                 test: /\.js$/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env'],
-                    },
-                },
+                use: [JsxLoader],
             },
             {
                 test: /\.jsx$/,
                 include: /src/,
                 exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env', '@babel/preset-react'],
-                    },
-                },
+                use: [JsxLoader],
             },
             {
                 test: /\.module\.scss$/,
@@ -74,6 +76,10 @@ const config = {
                     ResolveUrlLoader,
                     ScssLoader,
                 ],
+            },
+            {
+                test: /.svg$/,
+                use: [JsxLoader, SvgLoader,],
             },
         ],
     },

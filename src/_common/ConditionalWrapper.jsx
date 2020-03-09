@@ -6,7 +6,7 @@ const ConditionalWrapper = ({ condition, wrapper, children }) =>
 
 ConditionalWrapper.propTypes = {
     condition: PropTypes.any,
-    wrapper: PropTypes.element,
+    wrapper: PropTypes.func,
     children: PropTypes.element.isRequired,
 }
 

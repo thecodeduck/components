@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Label from '../_common/Label'
-import HelpText from '../_common/HelpText'
-import Error from '../_common/Error'
+import InputMessaging from "../_common/InputMessaging";
+
+import styles from './TextInput.module.scss';
 
 const TextInput = ({
     autoFocus,
     disabled,
+    alert,
     error,
-    helpText,
     icon,
     id,
     label,
@@ -24,21 +25,21 @@ const TextInput = ({
     ...rest
 }) => {
     return (
-        <Error error={error}>
+        <InputMessaging alert={alert} error={error} disabled={disabled} required={required}>
             <Label label={label} disabled={disabled} required={required}>
-                <HelpText helpText={helpText}>
-                    <input
-                        type='text'
-                        autoFocus={autoFocus}
-                        aria-disabled={disabled}
-                        required={required}
-                        placeholder={placeholder}
-                        maxLength={maxLength}
-                        onChange={onChange}
-                        disabled={disabled} />
-                </HelpText>
+                <input
+                    className={styles.input}
+                    type='text'
+                    autoFocus={autoFocus}
+                    aria-disabled={disabled}
+                    required={required}
+                    value={value}
+                    placeholder={placeholder}
+                    maxLength={maxLength}
+                    onChange={onChange}
+                    disabled={disabled} />
             </Label>
-        </Error>
+        </InputMessaging>
     )
 }
 
