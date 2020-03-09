@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Label from '../_common/Label'
-import InputMessaging from '../_common/InputMessaging'
+import InputWrapper from '../_common/InputWrapper'
 
 const Checkbox = ({
                        autoFocus,
@@ -20,8 +19,6 @@ const Checkbox = ({
                        ...rest
                    }) => {
     return (
-        <InputMessaging alert={alert} helpText={helpText} disabled={disabled} required={required}>
-            <Label label={label} disabled={disabled} required={required}>
                 <input
                     type='checkbox'
                     autoFocus={autoFocus}
@@ -30,9 +27,8 @@ const Checkbox = ({
                     aria-checked={checked}
                     checked={checked}
                     onChange={onChange}
-                    disabled={disabled} />
-            </Label>
-        </InputMessaging>
+                    disabled={disabled}
+                />
     )
 }
 

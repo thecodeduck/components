@@ -3,16 +3,23 @@ import classNames from "classnames";
 
 import styles from './InputWrapper.module.scss';
 
-const InputMessaging = ({ alert, error, disabled, children }) => {
+const InputWrapper = ({ alert, label, error, disabled, children }) => {
     return (
         <section className={classNames({
             [styles.error]: error,
             [styles.disabled]: disabled
         })}>
-            {children}
+            {label ?
+                <label>
+                    {label}
+                    {children}
+                </label>
+            :
+            children
+            }
             {alert}
         </section>
     );
 };
 
-export default InputMessaging;
+export default InputWrapper;

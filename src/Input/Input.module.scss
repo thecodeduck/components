@@ -1,0 +1,12 @@
+@import "../_common/base";
+
+.input {
+  width: 100%;
+  font-size: 1rem;
+  padding: .2rem .4rem;
+  margin: .2rem 0;
+  color: currentColor;
+  border: 1px solid currentColor;
+  border-radius: .2rem;
+  outline: none;
+}

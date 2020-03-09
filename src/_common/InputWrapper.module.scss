@@ -1,7 +1,12 @@
+section {
+  transition: color .2s ease-in-out;
+  font-size: .8rem;
+}
+
 .error {
-  color: pink;
+  color: red;
 }
 
 .disabled {
-  color: blue;
+  color: grey;
 }
